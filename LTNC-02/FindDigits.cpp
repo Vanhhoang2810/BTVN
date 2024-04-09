@@ -13,8 +13,19 @@ string rtrim(const string &);
  */
 
 int findDigits(int n) {
+    int count = 0;
+    int original = n;
+    while (n) {
+        int u = n % 10;
+        if (u!=0 && original%u==0) {
+            count++;
+        }
+        n/=10;
+    }
+    return count;
     
 }
+
 
 int main()
 {
